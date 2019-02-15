@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSearcherFlickrAPI", "PhotoSearcherFlickrAPI\PhotoSearcherFlickrAPI.csproj", "{559A2BAA-EC10-45EB-87AA-048A8DB38095}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiAndWPFExplorartion", "..\ApiPhotoServiceGetter\ApiAndWPFExplorartion\ApiAndWPFExplorartion.csproj", "{D2368B0F-4E79-461C-BDA2-6683E43D055A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{559A2BAA-EC10-45EB-87AA-048A8DB38095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{559A2BAA-EC10-45EB-87AA-048A8DB38095}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{559A2BAA-EC10-45EB-87AA-048A8DB38095}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{559A2BAA-EC10-45EB-87AA-048A8DB38095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2368B0F-4E79-461C-BDA2-6683E43D055A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2368B0F-4E79-461C-BDA2-6683E43D055A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2368B0F-4E79-461C-BDA2-6683E43D055A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2368B0F-4E79-461C-BDA2-6683E43D055A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
