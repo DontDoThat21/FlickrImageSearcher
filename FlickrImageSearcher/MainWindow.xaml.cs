@@ -1,8 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.Win32;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,7 +108,7 @@ namespace PhotoSearcherFlickrAPI
         /// </summary>
         private void DisplayImages(JObject jsonResponse)
         {
-            // If thed currentPage is 1 then just clear existing images and reset total count
+            // If the currentPage is 1 then just clear existing images and reset total count
             if (currentPage == 1)
             {
                 ImagesWrapPanel.Children.Clear();
@@ -127,11 +129,24 @@ namespace PhotoSearcherFlickrAPI
 
                 Image image = new Image
                 {
-                    Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(photoUrl)),
+                    Source = new BitmapImage(new Uri(photoUrl)),
                     Width = 150,
                     Height = 150,
                     Margin = new Thickness(5)
                 };
+
+                // code to support right click and save
+                // functionality on returned images
+                ContextMenu contextMenu = new ContextMenu();
+                MenuItem saveMenuItem = new MenuItem();
+                saveMenuItem.Header = "Save Image";
+                saveMenuItem.Click += (sender, args) =>
+                {
+                    SaveImage(photoUrl);
+                };
+                contextMenu.Items.Add(saveMenuItem);
+
+                image.ContextMenu = contextMenu;
 
                 TextBlock titleTextBlock = new TextBlock
                 {
@@ -160,6 +175,25 @@ namespace PhotoSearcherFlickrAPI
             ImageCountTextBlock.Text = $"Images Loaded: {totalImagesLoaded}";
 
             currentPage++;
+        }
+
+        /// <summary>
+        /// Added to every image found. Basically, when a user right clicks an image, save the file and download it to where they select.
+        /// </summary>
+        private void SaveImage(string imageUrl)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = "image"; // Default file name
+            saveFileDialog.DefaultExt = ".jpg"; // Default file extension
+            saveFileDialog.Filter = "JPEG Image (.jpg)|*.jpg"; // Filter files by extension
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (WebClient webClient = new WebClient())
+                {
+                    webClient.DownloadFile(imageUrl, saveFileDialog.FileName);
+                }
+            }
         }
 
         /// <summary>
