@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoSearcherFlickrAPI"
         mc:Ignorable="d"
-        Title="Flickr Image Searcher" Height="450" Width="800" MinWidth="700" MinHeight="300">
+        Title="Flickr Image Searcher" Height="450" Width="800" MinWidth="853" MinHeight="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
