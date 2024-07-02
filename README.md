@@ -6,6 +6,8 @@ API: Flickr API for image search
 
 This WPF application allows users to search for images using the Flickr API and display them in a dynamically created grid-like view. Users can also save images locally by right-clicking on them and selecting "Save Image" from the context menu.
 
+![image](https://github.com/DontDoThat21/FlickrImageSearcher/assets/46426868/a4f8a358-d9ac-44e7-9e57-baedfc7dbecf)
+
 Features:
 * Search images using keywords.
 * Display search results in a scrollable grid view.
