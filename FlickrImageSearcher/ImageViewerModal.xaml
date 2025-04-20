@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:PhotoSearcherFlickrAPI"
         mc:Ignorable="d"
         Title="Image Viewer" Height="600" Width="800" 
-        WindowStartupLocation="CenterScreen" 
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource DarkBackgroundBrush}"
+        Foreground="{StaticResource DarkForegroundBrush}"
         KeyDown="Window_KeyDown">
-    <Grid>
+    <Grid Background="{StaticResource DarkBackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -17,6 +19,7 @@
         <ScrollViewer x:Name="ImageScrollViewer" 
                       HorizontalScrollBarVisibility="Auto" 
                       VerticalScrollBarVisibility="Auto"
+                      Background="{StaticResource DarkPanelBrush}"
                       Grid.Row="0">
             <Image x:Name="ImageDisplay" 
                    Stretch="Uniform" 
@@ -26,18 +29,23 @@
                     <ScaleTransform x:Name="ImageScaleTransform" ScaleX="1" ScaleY="1" />
                 </Image.RenderTransform>
                 <Image.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Header="Save Image" Click="SaveImage_Click"/>
+                    <ContextMenu Background="{StaticResource DarkPanelBrush}" 
+                                 BorderBrush="{StaticResource DarkBorderBrush}">
+                        <MenuItem Header="Save Image" Click="SaveImage_Click" 
+                                  Foreground="{StaticResource DarkForegroundBrush}"
+                                  Background="{StaticResource DarkPanelBrush}"/>
                     </ContextMenu>
                 </Image.ContextMenu>
             </Image>
         </ScrollViewer>
         
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10"
+                    Background="{StaticResource DarkBackgroundBrush}">
             <Button x:Name="ZoomInButton" Content="+" Width="40" Height="30" Margin="5" Click="ZoomInButton_Click" />
             <Button x:Name="ZoomOutButton" Content="-" Width="40" Height="30" Margin="5" Click="ZoomOutButton_Click" />
             <Button x:Name="ResetZoomButton" Content="Reset" Width="60" Height="30" Margin="5" Click="ResetZoomButton_Click" />
-            <TextBlock x:Name="ZoomLevelText" Text="Zoom: 100%" VerticalAlignment="Center" Margin="10,0" />
+            <TextBlock x:Name="ZoomLevelText" Text="Zoom: 100%" VerticalAlignment="Center" Margin="10,0" 
+                       Foreground="{StaticResource DarkForegroundBrush}"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -5,27 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoSearcherFlickrAPI"
         mc:Ignorable="d"
+        Background="{StaticResource DarkBackgroundBrush}"
+        Foreground="{StaticResource DarkForegroundBrush}"
         Title="Flickr Image Searcher" Height="450" Width="800" MinWidth="853" MinHeight="300">
-    <Grid>
+    <Grid Background="{StaticResource DarkBackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" x:Name="ImagesScrollViewer" ScrollChanged="ImagesScrollViewer_ScrollChanged">
-            <WrapPanel Orientation="Horizontal" Margin="10" x:Name="ImagesWrapPanel"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" 
+                      x:Name="ImagesScrollViewer" ScrollChanged="ImagesScrollViewer_ScrollChanged" 
+                      Background="{StaticResource DarkBackgroundBrush}">
+            <WrapPanel Orientation="Horizontal" Margin="10" x:Name="ImagesWrapPanel" 
+                       Background="{StaticResource DarkPanelBrush}"/>
         </ScrollViewer>
 
-        <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="2" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="2" HorizontalAlignment="Center" 
+                    Background="{StaticResource DarkBackgroundBrush}">
             <TextBox x:Name="SearchTextBox" Width="180" Height="30" Margin="0,0,10,0" KeyUp="SearchTextBox_KeyUp"/>
             <Button Content="Search" Width="60" Height="30" Click="SearchButton_Click" Margin="0,0,10,0" />
             <Button Content="Clear" Width="50" Height="30" Click="ClearButton_Click" Margin="0,0,10,0"/>
-            <TextBlock Text="Images Loaded: 0" x:Name="ImageCountTextBlock" VerticalAlignment="Center" Margin="0,0,10,0"/>
-            <Label Content="Images loading when scrolling: " x:Name="PaginationCountLabel" VerticalAlignment="Center" Margin="0,0,-2,0"/>
-            <TextBox Text="15" Width="30" x:Name="PaginationCountTextBlock" VerticalAlignment="Center" Margin="0,0,10,0" TextChanged="PaginationCountTextBlock_TextChanged"/>
-
+            <TextBlock Text="Images Loaded: 0" x:Name="ImageCountTextBlock" VerticalAlignment="Center" 
+                       Foreground="{StaticResource DarkForegroundBrush}" Margin="0,0,10,0"/>
+            <Label Content="Images loading when scrolling: " x:Name="PaginationCountLabel" 
+                   VerticalAlignment="Center" Foreground="{StaticResource DarkForegroundBrush}" Margin="0,0,-2,0"/>
+            <TextBox Text="15" Width="30" x:Name="PaginationCountTextBlock" VerticalAlignment="Center" 
+                     Margin="0,0,10,0" TextChanged="PaginationCountTextBlock_TextChanged"/>
         </StackPanel>
-        
     </Grid>
 </Window>

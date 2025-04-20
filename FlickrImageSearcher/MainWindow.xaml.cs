@@ -37,7 +37,7 @@ namespace PhotoSearcherFlickrAPI
             InitializeComponent();
             Images = new ObservableCollection<ImageItem>();
             DataContext = this;
-            ImagesWrapPanel.Background = Brushes.LightGray;
+            ImagesWrapPanel.Background = (SolidColorBrush)Application.Current.Resources["DarkPanelBrush"];
             AttachScrollEvent();
         }
 
@@ -96,7 +96,7 @@ namespace PhotoSearcherFlickrAPI
         {
             ImagesWrapPanel.Children.Clear();
             SearchTextBox.Text = string.Empty;
-            ImagesWrapPanel.Background = Brushes.LightGray;
+            ImagesWrapPanel.Background = (SolidColorBrush)Application.Current.Resources["DarkPanelBrush"];
 
             totalImagesLoaded = 0;
             ImageCountTextBlock.Text = $"Images Loaded: {totalImagesLoaded}";
@@ -138,8 +138,14 @@ namespace PhotoSearcherFlickrAPI
                 // code to support right click and save
                 // functionality on returned images
                 ContextMenu contextMenu = new ContextMenu();
+                contextMenu.Background = (SolidColorBrush)Application.Current.Resources["DarkPanelBrush"];
+                contextMenu.Foreground = (SolidColorBrush)Application.Current.Resources["DarkForegroundBrush"];
+                contextMenu.BorderBrush = (SolidColorBrush)Application.Current.Resources["DarkBorderBrush"];
+
                 MenuItem saveMenuItem = new MenuItem();
                 saveMenuItem.Header = "Save Image";
+                saveMenuItem.Foreground = (SolidColorBrush)Application.Current.Resources["DarkForegroundBrush"];
+                saveMenuItem.Background = (SolidColorBrush)Application.Current.Resources["DarkPanelBrush"];
                 saveMenuItem.Click += (sender, args) =>
                 {
                     SaveImage(photoUrl);
@@ -173,7 +179,8 @@ namespace PhotoSearcherFlickrAPI
                 {
                     Orientation = Orientation.Vertical,
                     Margin = new Thickness(5),
-                    Width = 150
+                    Width = 150,
+                    Background = (SolidColorBrush)Application.Current.Resources["DarkPanelBrush"]
                 };
 
                 imagePanel.Children.Add(image);

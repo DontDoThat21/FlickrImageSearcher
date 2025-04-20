@@ -4,6 +4,95 @@
              xmlns:local="clr-namespace:PhotoSearcherFlickrAPI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!-- Dark Theme Colors -->
+        <SolidColorBrush x:Key="DarkBackgroundBrush" Color="#1E1E1E"/>
+        <SolidColorBrush x:Key="DarkPanelBrush" Color="#252526"/>
+        <SolidColorBrush x:Key="DarkBorderBrush" Color="#3F3F46"/>
+        <SolidColorBrush x:Key="DarkForegroundBrush" Color="#CCCCCC"/>
+        <SolidColorBrush x:Key="DarkHighlightBrush" Color="#007ACC"/>
+        <SolidColorBrush x:Key="DarkButtonBackgroundBrush" Color="#333333"/>
+        <SolidColorBrush x:Key="DarkButtonBorderBrush" Color="#555555"/>
+
+        <!-- System colors override -->
+        <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#1E1E1E"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#252526"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="#CCCCCC"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.WindowTextBrushKey}" Color="#CCCCCC"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.MenuTextBrushKey}" Color="#CCCCCC"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.MenuBarBrushKey}" Color="#252526"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.MenuBrushKey}" Color="#252526"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveCaptionTextBrushKey}" Color="#CCCCCC"/>
+
+        <!-- Button Style -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource DarkButtonBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource DarkButtonBorderBrush}"/>
+            <Setter Property="Padding" Value="8,2"/>
+        </Style>
+
+        <!-- TextBox Style -->
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="{StaticResource DarkPanelBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource DarkBorderBrush}"/>
+            <Setter Property="Padding" Value="5,2"/>
+            <Setter Property="CaretBrush" Value="{StaticResource DarkForegroundBrush}"/>
+        </Style>
+
+        <!-- TextBlock Style -->
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+        </Style>
+
+        <!-- Label Style -->
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+
+        <!-- ScrollViewer Style -->
+        <Style TargetType="ScrollViewer">
+            <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
+        </Style>
+        
+        <!-- MenuItem Style -->
+        <Style TargetType="MenuItem">
+            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+            <Setter Property="Background" Value="{StaticResource DarkPanelBrush}"/>
+        </Style>
+        
+        <!-- ContextMenu Style -->
+        <Style TargetType="ContextMenu">
+            <Setter Property="Background" Value="{StaticResource DarkPanelBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource DarkBorderBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+        </Style>
+
+        <!-- Window Style -->
+        <Style TargetType="Window">
+            <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+        </Style>
+
+        <!-- WrapPanel Style -->
+        <Style TargetType="WrapPanel">
+            <Setter Property="Background" Value="{StaticResource DarkPanelBrush}"/>
+        </Style>
+        
+        <!-- Grid Style -->
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
+        </Style>
+        
+        <!-- StackPanel Style -->
+        <Style TargetType="StackPanel">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        
+        <!-- TextElement Style (for text rendering in various controls) -->
+        <Style TargetType="{x:Type TextElement}">
+            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+        </Style>
     </Application.Resources>
 </Application>
