@@ -8,6 +8,9 @@ This WPF application allows users to search for images using the Flickr API and 
 
 ![image](https://github.com/DontDoThat21/FlickrImageSearcher/assets/46426868/a4f8a358-d9ac-44e7-9e57-baedfc7dbecf)
 ![image](https://github.com/user-attachments/assets/e9dcd610-2381-4552-bd06-a1571179fbb1)
+![image](https://github.com/user-attachments/assets/2014c939-2609-46d7-a49d-95b429ae37c2)
+![image](https://github.com/user-attachments/assets/6dd75940-0efe-426f-bb78-d31d735aec99)
+
 
 Features:
 * Search images using keywords.
