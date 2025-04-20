@@ -94,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="C:/Users/Ty/source/repos/DontDoThat21/FlickrImageSearcher/FlickrImageSearcher/\ImageViewerModal.xaml">
+      <Link>ImageViewerModal.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -101,6 +105,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="C:/Users/Ty/source/repos/DontDoThat21/FlickrImageSearcher/FlickrImageSearcher/\ImageViewerModal.xaml.cs">
+      <Link>ImageViewerModal.xaml.cs</Link>
+      <DependentUpon>ImageViewerModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="ImageItem.cs" />
     <Compile Include="MainWindow.xaml.cs">

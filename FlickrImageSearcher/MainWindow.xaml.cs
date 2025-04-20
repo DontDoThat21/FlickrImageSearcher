@@ -148,6 +148,19 @@ namespace PhotoSearcherFlickrAPI
 
                 image.ContextMenu = contextMenu;
 
+                // Add to DisplayImages method, after creating the Image control:
+                image.Cursor = Cursors.Hand;
+                image.MouseLeftButtonDown += (s, args) => 
+                {
+                    // Get the original sized image URL by replacing "_m" with "_b" for larger size
+                    string largePhotoUrl = photoUrl.Replace("_m.jpg", "_b.jpg");
+                    
+                    // Show the modal with zoom functionality
+                    ImageViewerModal modal = new ImageViewerModal(largePhotoUrl, title);
+                    modal.Owner = this;
+                    modal.ShowDialog();
+                };
+
                 TextBlock titleTextBlock = new TextBlock
                 {
                     Text = title,
